@@ -35,6 +35,7 @@ class AntColony(object):
         self.pheromone = np.ones(self.distances.shape) / len(distances)
 
         # Tupla com cada vértice do grafo sendo identificado por um número
+        # (0, 1, 2, 3, 4, 5)
         self.all_inds = range(len(distances))
 
         self.n_ants = n_ants
@@ -95,7 +96,7 @@ class AntColony(object):
     def gen_all_paths(self):
         all_paths = []
         for i in range(self.n_ants):
-            # Todas as formigas começam do nó inicial 0
+            # Todas as formigas começam do nó inicial 0, por quê?
             path = self.gen_path(0)
             # Exemplo de elementento de all_paths:
             # ([(0, 2), (2, 3), (3, 4), (4, 1), (1, 0)], 9.0)
